@@ -3,18 +3,17 @@ ENV TITLE=Betterbird
 RUN \
   curl -o \
   /usr/share/selkies/www/icon.png \
-  https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/thunderbird-logo.png &&
-  pacman -S pacman --noconfirm &&
-  pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com &&
-  pacman-key --lsign-key 3056513887B78AEB &&
-  pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' &&
-  pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' &&
+  https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/thunderbird-logo.png && \
+  pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com && \
+  pacman-key --lsign-key 3056513887B78AEB && \
+  pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && \
+  pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && \
   cat <<EOF
   [chaotic-aur]
   Include = /etc/pacman.d/chaotic-mirrorlist
-  EOF &&
-  pacman -Syu --noconfirm &&
-  pacman -S betterbird &&
+  EOF && \
+  pacman -Syu --noconfirm && \
+  pacman -S betterbird
   COPY /root /
   EXPOSE 3008
   VOLUME /config
