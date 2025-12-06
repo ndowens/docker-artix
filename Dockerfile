@@ -9,8 +9,8 @@ RUN \
   pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && \
   pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && \
   cat <<EOF
-  [chaotic-aur]
-  Include = /etc/pacman.d/chaotic-mirrorlist
+    [chaotic-aur]
+    Include = /etc/pacman.d/chaotic-mirrorlist
   EOF && \
   pacman -Syu --noconfirm && \
   pacman -S betterbird
