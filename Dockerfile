@@ -9,7 +9,8 @@ RUN \
   pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && \
   pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && \
   echo '[chaotic-aur]' >> /etc/pacman.conf && \
-  echo 'Include = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf && \
+  echo 'Include = /etc/pacman.d/chaotic-mirrorlist' >> /etc/pacman.conf
+RUN \
   pacman -Syu --noconfirm && \
   pacman -S betterbird
 COPY /root /
