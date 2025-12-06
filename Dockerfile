@@ -9,11 +9,12 @@ RUN \
   pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' && \
   pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' && \
   cat <<EOF
-    [chaotic-aur]
-    Include = /etc/pacman.d/chaotic-mirrorlist
-  EOF && \
+  [chaotic-aur]
+  Include = /etc/pacman.d/chaotic-mirrorlist
+  EOF
+RUN \
   pacman -Syu --noconfirm && \
   pacman -S betterbird
-  COPY /root /
-  EXPOSE 3008
-  VOLUME /config
+COPY /root /
+EXPOSE 3008
+VOLUME /config
