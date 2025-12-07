@@ -7,3 +7,4 @@ RUN \
   passwd -d ndowens && \
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates
 COPY /sudoers /etc
+COPY /config /home/ndowens/.config/git

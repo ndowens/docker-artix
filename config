@@ -1,0 +1,19 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[user]
+	name = Nathan
+	email = ndowens@mf.me
+	signingkey = /home/ndowens/.ssh/id_rsa.pub
+[gpg]
+	format = ssh
+[credential]
+	helper = store
+[http]
+	followRedirects = true
