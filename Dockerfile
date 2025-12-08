@@ -10,6 +10,7 @@ COPY /sudoers /etc
 VOLUME HOME:/home/ndowens
 COPY /config /home/ndowens/.config/git
 COPY /autostart /etc/default/
+COPY /artools-pkg.conf /etc/artools/
 RUN chown -R ndowens:ndowens /home/ndowens
 USER ndowens
 RUN \
