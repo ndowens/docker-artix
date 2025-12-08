@@ -7,13 +7,12 @@ RUN \
   passwd -d ndowens && \
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates
 COPY /sudoers /etc
-ENTRYPOINT ["/bin/bash", "-c", "su - ndowens"]
 VOLUME HOME:/home/ndowens
 COPY /config /home/ndowens/.config/git
+COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens
 USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
 RUN \
   echo 'eval `ssh-agent -s`' >> /home/ndowens/.bashrc && \
-  echo 'su - ndowens' > /etc/default/autostart
