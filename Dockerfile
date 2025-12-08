@@ -8,3 +8,5 @@ RUN \
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates
 COPY /sudoers /etc
 COPY /config /home/ndowens/.config/git
+ENTRYPOINT ['/bin/bash -c su - ndowens']
+RUN eval `ssh-agent -s`
