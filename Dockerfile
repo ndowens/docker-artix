@@ -10,7 +10,5 @@ COPY /sudoers /etc
 COPY /config /home/ndowens/.config/git
 ENTRYPOINT ["/bin/bash", "-c", "su - ndowens"]
 RUN \
-  cat <<EOF >>/home/ndowens/.bashrc
-    eval `ssh-agent -s`
-  EOF
+  echo 'eval `ssh-agent -s`' >> /home/ndowens/.bashrc
 RUN chown -R ndowens:ndowens /home/ndowens
