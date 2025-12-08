@@ -7,8 +7,9 @@ RUN \
   passwd -d ndowens && \
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates
 COPY /sudoers /etc
-COPY /config /home/ndowens/.config/git
 ENTRYPOINT ["/bin/bash", "-c", "su - ndowens"]
+COPY /config /home/ndowens/.config/git
+RUN chown -R ndowens:ndowens /home/ndowens
+USER ndowens
 RUN \
   echo 'eval `ssh-agent -s`' >> /home/ndowens/.bashrc
-RUN chown -R ndowens:ndowens /home/ndowens
