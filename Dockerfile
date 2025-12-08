@@ -15,5 +15,5 @@ USER ndowens
 RUN \
   mkdir -p .cache/artix-checkupdates
 RUN \
-  echo 'eval `ssh-agent -s`' >> /home/ndowens/.bashrc &&
+  echo 'eval `ssh-agent -s`' >> /home/ndowens/.bashrc && \
   echo 'su - ndowens' > /etc/default/autostart
