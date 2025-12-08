@@ -5,7 +5,7 @@ RUN \
   pacman -S artools-pkg artix-checkupdates artix-metro vim pacman-contrib sudo --noconfirm && \
   useradd -mG users,wheel ndowens && \
   passwd -d ndowens && \
-  ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates
+  ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates && \
   ln -sf /usr/bin/artix-metro /usr/bin/am
 COPY /sudoers /etc
 VOLUME HOME:/home/ndowens
