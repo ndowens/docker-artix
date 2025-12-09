@@ -17,5 +17,3 @@ RUN chown -R ndowens:ndowens /home/ndowens
 USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
-RUN \
-  echo 'eval `ssh-agent -s`' >> /home/ndowens/.bashrc
