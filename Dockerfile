@@ -17,4 +17,4 @@ RUN chown -R ndowens:ndowens /home/ndowens
 USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
-RUN /zsh.sh | yes
+RUN /zsh.sh | echo y
