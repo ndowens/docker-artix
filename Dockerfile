@@ -18,6 +18,6 @@ USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
 RUN if [ ! -d /home/ndowens/.oh-my-zsh ]; then \
-     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | echo y && \
-     sed -e '/ZSH_THEME/ s,robbyrussel,norm,' -e '/plugins=/s,git,git ssh-agent,' -i /home/ndowens/.zshrc \
+     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" | echo y; && \
+     sed -e '/ZSH_THEME/ s,robbyrussel,norm,' -e '/plugins=/s,git,git ssh-agent,' -i /home/ndowens/.zshrc; \
     fi
