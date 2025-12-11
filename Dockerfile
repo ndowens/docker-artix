@@ -14,9 +14,9 @@ VOLUME HOME:/home/ndowens
 COPY /config /home/ndowens/.config/git
 COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens
+COPY /zsh.sh zsh.sh
+RUN chmod a+x zsh.sh
 USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
-COPY /zsh.sh zsh.sh
-RUN chmod a+x zsh.sh
 RUN /zsh.sh | echo y
