@@ -14,9 +14,10 @@ VOLUME HOME:/home/ndowens
 COPY /config /home/ndowens/.config/git
 COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens
-COPY /zsh.sh zsh.sh
-RUN chmod a+x zsh.sh
 USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
-RUN /zsh.sh | echo y
+RUN if [ ! -d /home/ndowens/.oh-my-zsh ]; then \
+     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
+     sed -e '/ZSH_THEME/ s,robbyrussel,norm,' -e '/plugins=/s,git,git ssh-agent,' -i /home/ndowens/.zshrc \
+    fi
