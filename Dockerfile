@@ -16,4 +16,5 @@ COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens && \
   chsh -s /usr/bin/zsh ndowens
 USER ndowens
-ENTRYPOINT ["/bin/zsh", "-c", "cd /home/ndowens"]
+WORKDIR /home/ndowens
+CMD /bin/zsh
