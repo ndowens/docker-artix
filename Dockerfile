@@ -18,4 +18,4 @@ USER ndowens
 RUN \
   mkdir -p /home/ndowens/.cache/artix-checkupdates
 COPY /zsh.sh zsh.sh
-RUN zsh.sh | echo y
+RUN /zsh.sh | echo y
