@@ -17,4 +17,3 @@ RUN chown -R ndowens:ndowens /home/ndowens && \
   chsh -s /usr/bin/zsh ndowens
 USER ndowens
 WORKDIR /home/ndowens
-CMD /bin/zsh
