@@ -14,6 +14,7 @@ VOLUME HOME:/home/ndowens
 COPY /config /home/ndowens/.config/git
 COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens && \
-  chsh -s /usr/bin/zsh ndowens
+  chsh -s /usr/bin/zsh ndowens && \
+  passwd -d alpm
 USER ndowens
 WORKDIR /home/ndowens
