@@ -3,7 +3,7 @@ FROM artixlinux/artixlinux:base-dinit
 RUN \
   pacman -Syu --noconfirm && \
   pacman -S artools-pkg artix-checkupdates artix-metro \
-    vim pacman-contrib sudo less zsh \
+    vim pacman-contrib sudo less zsh base-devel \
     --noconfirm && \
   useradd -mG users,wheel ndowens && \
   passwd -d ndowens && \
