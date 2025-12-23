@@ -1,4 +1,4 @@
-FROM artixlinux/artixlinux:base-dinit
+FROM artixlinux/artixlinux
 
 RUN \
   pacman -Syu --noconfirm && \
