@@ -18,4 +18,4 @@ RUN chown -R ndowens:ndowens /home/ndowens && \
   passwd -d alpm
 USER ndowens
 WORKDIR /home/ndowens
-CMD sshd -h /home/ndowens/.ssh/id_rsa.pub
+RUN /usr/bin/sshd -h /home/ndowens/.ssh/id_rsa.pub
