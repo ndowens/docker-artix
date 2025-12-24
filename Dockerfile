@@ -1,4 +1,4 @@
-FROM artixlinux/artixlinux
+FROM artixlinux/artixlinux:base-devel
 
 RUN \
   pacman -Syu --noconfirm && \
@@ -16,6 +16,6 @@ COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens && \
   chsh -s /usr/bin/zsh ndowens && \
   passwd -d alpm
+CMD /usr/bin/sshd -h /home/ndowens/.ssh/id_ed.pub
 USER ndowens
 WORKDIR /home/ndowens
-CMD /usr/bin/sshd -h /home/ndowens/.ssh/id_ed.pub
