@@ -16,6 +16,6 @@ COPY /autostart /etc/default/
 RUN chown -R ndowens:ndowens /home/ndowens && \
   chsh -s /usr/bin/zsh ndowens && \
   passwd -d alpm
-CMD /usr/bin/sshd -D
+CMD /usr/bin/sshd -D -h /home/ndowens/.ssh/id_ed25519
 USER ndowens
 WORKDIR /home/ndowens
