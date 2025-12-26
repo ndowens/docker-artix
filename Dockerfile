@@ -18,4 +18,5 @@ RUN chown -R ndowens:ndowens /home/ndowens && \
   passwd -d alpm
 CMD /usr/bin/sshd -D -h /home/ndowens/.ssh/id_ed25519
 USER ndowens
+RUN passwd -s ${PASSWORD}
 WORKDIR /home/ndowens
