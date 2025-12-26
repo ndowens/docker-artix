@@ -6,7 +6,7 @@ RUN \
     vim pacman-contrib sudo less zsh base-devel \
     --noconfirm && \
   useradd -mG users,wheel ndowens && \
-  passwd -d ndowens && \
+  passwd ndowens -s ${{ secrets.PASSWORD }}
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates && \
   ln -sf /usr/bin/artix-metro /usr/bin/am
 COPY /sudoers /etc
@@ -18,5 +18,4 @@ RUN chown -R ndowens:ndowens /home/ndowens && \
   passwd -d alpm
 CMD /usr/bin/sshd -D -h /home/ndowens/.ssh/id_ed25519
 USER ndowens
-RUN passwd -s ${PASSWORD}
 WORKDIR /home/ndowens
