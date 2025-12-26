@@ -6,7 +6,7 @@ RUN \
     vim pacman-contrib sudo less zsh base-devel \
     --noconfirm && \
   useradd -mG users,wheel ndowens && \
-  passwd ndowens -s "c" && \
+  passwd -d ndowens && \
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates && \
   ln -sf /usr/bin/artix-metro /usr/bin/am
 COPY /sudoers /etc
