@@ -6,9 +6,9 @@ RUN \
     vim pacman-contrib sudo less zsh base-devel \
     --noconfirm && \
   useradd -mG users,wheel ndowens && \
-  passwd -d ndowens && \
   ln -sf /usr/bin/artix-checkupdates /usr/bin/cupdates && \
   ln -sf /usr/bin/artix-metro /usr/bin/am
+RUN usermod -p '$6$FfJh2OFKWZ3cptPF$p3PmjRwknbb5sBvD/b9M3OHxt92WK7jZkyYjoJj3XoflzpaUKbwD.ucpLDPWNo0WevQUxFojCkIcMulgFu5A/0' ndowens
 COPY /sudoers /etc
 VOLUME HOME:/home/ndowens
 COPY /config /home/ndowens/.config/git
